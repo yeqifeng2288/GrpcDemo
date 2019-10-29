@@ -1,0 +1,2 @@
+obj\Release\netcoreapp3.0/Duplicate.cs \
+obj\Release\netcoreapp3.0/DuplicateGrpc.cs: Protos/Duplicate.proto

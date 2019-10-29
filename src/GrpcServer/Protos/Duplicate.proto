@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+// 命名空间。
+option csharp_namespace = "GrpcServer.Protos";
+
+package Duplicate;
+
+service Duplicater{
+
+	// 进队列接口。
+	rpc EntryDuplicate(stream EntryRequset) returns (stream EntryResponse);
+
+	// 判重接口。
+	rpc DuplicateCheck(stream DuplicateCheckRequset) returns (stream DuplicateCheckResponse);
+}
+
+// 进队列请求。
+message EntryRequset{
+	// tag=1，表示在传输过程中，此数据的名字就是1。
+	string tag=1;
+}
+
+// 进队后响应。
+message EntryResponse{
+	bool result=1;
+	string msg=2;
+}
+
+// 判重请求。
+message DuplicateCheckRequset{
+	string tag=1;
+}
+
+// 判重后响应。
+message DuplicateCheckResponse{
+	bool result=1;
+}
