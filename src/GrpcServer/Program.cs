@@ -21,6 +21,12 @@ namespace GrpcServer
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // 支持无tls的http/2。
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        options.ListenLocalhost(5000, o => o.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2);
+                    });
+
                     webBuilder.UseStartup<Startup>();
                 });
     }

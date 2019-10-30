@@ -10,7 +10,12 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
-            var grpcChannel = GrpcChannel.ForAddress("https://localhost:5001");
+            // 不需要tls设置。
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+            var grpcChannel = GrpcChannel.ForAddress("http://localhost:5000");
+
+            // 使用Https。
+            // var grpcChannel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Duplicater.DuplicaterClient(grpcChannel);
             var entry = client.EntryDuplicate();
             var random = new Random();
@@ -29,7 +34,7 @@ namespace GrpcClient
             });
             for (int i = 0; i < length; i++)
             {
-                //SpinWait.SpinUntil(() => false, 200);
+                SpinWait.SpinUntil(() => false, 200);
                 var msg = random.Next(0, 2000).ToString();
                 await entry.RequestStream.WriteAsync(new EntryRequset { Tag = msg });
             }
