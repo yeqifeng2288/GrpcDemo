@@ -45,9 +45,20 @@ namespace GrpcServer.Core
         /// <returns>如果标签存在则返回true。</returns>
         public bool DuplicateCheck(string tag)
         {
+            return _tagContainer.Contains(tag);
+        }
+
+
+        /// <summary>
+        /// 删除一条标签。
+        /// </summary>
+        /// <param name="tag">标签。</param>
+        /// <returns>返回结果。</returns>
+        public bool RemoveItem(string tag)
+        {
             return Locker(() =>
             {
-                return _tagContainer.Contains(tag);
+                return _tagContainer.Remove(tag);
             });
         }
 

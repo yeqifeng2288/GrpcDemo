@@ -23,5 +23,12 @@ namespace GrpcServer.Core
         /// <param name="tag">标签。</param>
         /// <returns>如果标签存在则返回true。</returns>
         bool DuplicateCheck(string tag);
+
+        /// <summary>
+        /// 删除一条标签。
+        /// </summary>
+        /// <param name="tag">标签。</param>
+        /// <returns>返回结果。</returns>
+        bool RemoveItem(string tag);
     }
 }
