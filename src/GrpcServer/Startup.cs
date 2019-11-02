@@ -25,6 +25,7 @@ namespace GrpcServer
             services.AddControllers()
                 .AddJsonOptions(options =>
                 {
+                    // json首字母大写。
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 });
         }
@@ -42,6 +43,7 @@ namespace GrpcServer
             {
                 endpoints.MapGrpcService<DuplicateService>();
 
+                // 添加webapi控制器。
                 endpoints.MapControllers();
             });
         }
