@@ -12,3 +12,5 @@
 /src/GrpcClient/bin/Debug/netcoreapp3.0/runtimes
 /src/GrpcClient/bin/Debug/netcoreapp3.0
 /src/Entities/obj
+*.exe
+/src/GrpcServer/bin/Debug/netcoreapp3.0
