@@ -12,23 +12,23 @@ namespace GrpcServer.Protos {
   {
     static readonly string __ServiceName = "Duplicate.Duplicater";
 
-    static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryRequset> __Marshaller_Duplicate_EntryRequset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryRequset.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryRequest> __Marshaller_Duplicate_EntryRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryResponse> __Marshaller_Duplicate_EntryResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckRequset> __Marshaller_Duplicate_DuplicateCheckRequset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckRequset.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckRequest> __Marshaller_Duplicate_DuplicateCheckRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckResponse> __Marshaller_Duplicate_DuplicateCheckResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse> __Method_EntryDuplicate = new grpc::Method<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse>(
+    static readonly grpc::Method<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse> __Method_EntryDuplicate = new grpc::Method<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "EntryDuplicate",
-        __Marshaller_Duplicate_EntryRequset,
+        __Marshaller_Duplicate_EntryRequest,
         __Marshaller_Duplicate_EntryResponse);
 
-    static readonly grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse> __Method_DuplicateCheck = new grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse>(
+    static readonly grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse> __Method_DuplicateCheck = new grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "DuplicateCheck",
-        __Marshaller_Duplicate_DuplicateCheckRequset,
+        __Marshaller_Duplicate_DuplicateCheckRequest,
         __Marshaller_Duplicate_DuplicateCheckResponse);
 
     /// <summary>Service descriptor</summary>
@@ -48,7 +48,7 @@ namespace GrpcServer.Protos {
       /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
-      public virtual global::System.Threading.Tasks.Task EntryDuplicate(grpc::IAsyncStreamReader<global::GrpcServer.Protos.EntryRequset> requestStream, grpc::IServerStreamWriter<global::GrpcServer.Protos.EntryResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task EntryDuplicate(grpc::IAsyncStreamReader<global::GrpcServer.Protos.EntryRequest> requestStream, grpc::IServerStreamWriter<global::GrpcServer.Protos.EntryResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -60,7 +60,7 @@ namespace GrpcServer.Protos {
       /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
-      public virtual global::System.Threading.Tasks.Task DuplicateCheck(grpc::IAsyncStreamReader<global::GrpcServer.Protos.DuplicateCheckRequset> requestStream, grpc::IServerStreamWriter<global::GrpcServer.Protos.DuplicateCheckResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task DuplicateCheck(grpc::IAsyncStreamReader<global::GrpcServer.Protos.DuplicateCheckRequest> requestStream, grpc::IServerStreamWriter<global::GrpcServer.Protos.DuplicateCheckResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -82,8 +82,8 @@ namespace GrpcServer.Protos {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, DuplicaterBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_EntryDuplicate, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse>(serviceImpl.EntryDuplicate));
-      serviceBinder.AddMethod(__Method_DuplicateCheck, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse>(serviceImpl.DuplicateCheck));
+      serviceBinder.AddMethod(__Method_EntryDuplicate, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse>(serviceImpl.EntryDuplicate));
+      serviceBinder.AddMethod(__Method_DuplicateCheck, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse>(serviceImpl.DuplicateCheck));
     }
 
   }

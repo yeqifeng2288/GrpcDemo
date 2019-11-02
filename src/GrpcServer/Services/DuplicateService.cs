@@ -44,7 +44,7 @@ namespace GrpcServer.Services
         /// <param name="responseStream">响应流。</param>
         /// <param name="context">上下文。</param>
         /// <returns></returns>
-        public override async Task EntryDuplicate(IAsyncStreamReader<EntryRequset> requestStream, IServerStreamWriter<EntryResponse> responseStream, ServerCallContext context)
+        public override async Task EntryDuplicate(IAsyncStreamReader<EntryRequest> requestStream, IServerStreamWriter<EntryResponse> responseStream, ServerCallContext context)
         {
             while (await requestStream.MoveNext())
             {
@@ -69,7 +69,7 @@ namespace GrpcServer.Services
         /// <param name="responseStream">响应流。</param>
         /// <param name="context">上下文。</param>
         /// <returns></returns>
-        public override async Task DuplicateCheck(IAsyncStreamReader<DuplicateCheckRequset> requestStream, IServerStreamWriter<DuplicateCheckResponse> responseStream, ServerCallContext context)
+        public override async Task DuplicateCheck(IAsyncStreamReader<DuplicateCheckRequest> requestStream, IServerStreamWriter<DuplicateCheckResponse> responseStream, ServerCallContext context)
         {
             while (await requestStream.MoveNext())
             {

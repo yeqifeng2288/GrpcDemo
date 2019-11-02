@@ -12,23 +12,23 @@ namespace GrpcServer.Protos {
   {
     static readonly string __ServiceName = "Duplicate.Duplicater";
 
-    static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryRequset> __Marshaller_Duplicate_EntryRequset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryRequset.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryRequest> __Marshaller_Duplicate_EntryRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Protos.EntryResponse> __Marshaller_Duplicate_EntryResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.EntryResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckRequset> __Marshaller_Duplicate_DuplicateCheckRequset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckRequset.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckRequest> __Marshaller_Duplicate_DuplicateCheckRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Protos.DuplicateCheckResponse> __Marshaller_Duplicate_DuplicateCheckResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Protos.DuplicateCheckResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse> __Method_EntryDuplicate = new grpc::Method<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse>(
+    static readonly grpc::Method<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse> __Method_EntryDuplicate = new grpc::Method<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "EntryDuplicate",
-        __Marshaller_Duplicate_EntryRequset,
+        __Marshaller_Duplicate_EntryRequest,
         __Marshaller_Duplicate_EntryResponse);
 
-    static readonly grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse> __Method_DuplicateCheck = new grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse>(
+    static readonly grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse> __Method_DuplicateCheck = new grpc::Method<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "DuplicateCheck",
-        __Marshaller_Duplicate_DuplicateCheckRequset,
+        __Marshaller_Duplicate_DuplicateCheckRequest,
         __Marshaller_Duplicate_DuplicateCheckResponse);
 
     /// <summary>Service descriptor</summary>
@@ -67,7 +67,7 @@ namespace GrpcServer.Protos {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse> EntryDuplicate(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse> EntryDuplicate(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return EntryDuplicate(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -76,7 +76,7 @@ namespace GrpcServer.Protos {
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.EntryRequset, global::GrpcServer.Protos.EntryResponse> EntryDuplicate(grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.EntryRequest, global::GrpcServer.Protos.EntryResponse> EntryDuplicate(grpc::CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_EntryDuplicate, null, options);
       }
@@ -87,7 +87,7 @@ namespace GrpcServer.Protos {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse> DuplicateCheck(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse> DuplicateCheck(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DuplicateCheck(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -96,7 +96,7 @@ namespace GrpcServer.Protos {
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.DuplicateCheckRequset, global::GrpcServer.Protos.DuplicateCheckResponse> DuplicateCheck(grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::GrpcServer.Protos.DuplicateCheckRequest, global::GrpcServer.Protos.DuplicateCheckResponse> DuplicateCheck(grpc::CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_DuplicateCheck, null, options);
       }

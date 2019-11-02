@@ -8,14 +8,14 @@ package Duplicate;
 service Duplicater{
 
 	// 进队列接口。
-	rpc EntryDuplicate(stream EntryRequset) returns (stream EntryResponse);
+	rpc EntryDuplicate(stream EntryRequest) returns (stream EntryResponse);
 
 	// 判重接口。
-	rpc DuplicateCheck(stream DuplicateCheckRequset) returns (stream DuplicateCheckResponse);
+	rpc DuplicateCheck(stream DuplicateCheckRequest) returns (stream DuplicateCheckResponse);
 }
 
 // 进队列请求。
-message EntryRequset{
+message EntryRequest{
 	// tag=1，表示在传输过程中，此数据的名字就是1。
 	string tag=1;
 }
@@ -27,7 +27,7 @@ message EntryResponse{
 }
 
 // 判重请求。
-message DuplicateCheckRequset{
+message DuplicateCheckRequest{
 	string tag=1;
 }
 

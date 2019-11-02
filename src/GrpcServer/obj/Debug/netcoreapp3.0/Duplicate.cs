@@ -25,20 +25,20 @@ namespace GrpcServer.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZQcm90b3MvRHVwbGljYXRlLnByb3RvEglEdXBsaWNhdGUiGwoMRW50cnlS",
-            "ZXF1c2V0EgsKA3RhZxgBIAEoCSIsCg1FbnRyeVJlc3BvbnNlEg4KBnJlc3Vs",
-            "dBgBIAEoCBILCgNtc2cYAiABKAkiJAoVRHVwbGljYXRlQ2hlY2tSZXF1c2V0",
+            "ZXF1ZXN0EgsKA3RhZxgBIAEoCSIsCg1FbnRyeVJlc3BvbnNlEg4KBnJlc3Vs",
+            "dBgBIAEoCBILCgNtc2cYAiABKAkiJAoVRHVwbGljYXRlQ2hlY2tSZXF1ZXN0",
             "EgsKA3RhZxgBIAEoCSIoChZEdXBsaWNhdGVDaGVja1Jlc3BvbnNlEg4KBnJl",
             "c3VsdBgBIAEoCDKwAQoKRHVwbGljYXRlchJHCg5FbnRyeUR1cGxpY2F0ZRIX",
-            "LkR1cGxpY2F0ZS5FbnRyeVJlcXVzZXQaGC5EdXBsaWNhdGUuRW50cnlSZXNw",
+            "LkR1cGxpY2F0ZS5FbnRyeVJlcXVlc3QaGC5EdXBsaWNhdGUuRW50cnlSZXNw",
             "b25zZSgBMAESWQoORHVwbGljYXRlQ2hlY2sSIC5EdXBsaWNhdGUuRHVwbGlj",
-            "YXRlQ2hlY2tSZXF1c2V0GiEuRHVwbGljYXRlLkR1cGxpY2F0ZUNoZWNrUmVz",
+            "YXRlQ2hlY2tSZXF1ZXN0GiEuRHVwbGljYXRlLkR1cGxpY2F0ZUNoZWNrUmVz",
             "cG9uc2UoATABQhSqAhFHcnBjU2VydmVyLlByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.EntryRequset), global::GrpcServer.Protos.EntryRequset.Parser, new[]{ "Tag" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.EntryRequest), global::GrpcServer.Protos.EntryRequest.Parser, new[]{ "Tag" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.EntryResponse), global::GrpcServer.Protos.EntryResponse.Parser, new[]{ "Result", "Msg" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.DuplicateCheckRequset), global::GrpcServer.Protos.DuplicateCheckRequset.Parser, new[]{ "Tag" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.DuplicateCheckRequest), global::GrpcServer.Protos.DuplicateCheckRequest.Parser, new[]{ "Tag" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Protos.DuplicateCheckResponse), global::GrpcServer.Protos.DuplicateCheckResponse.Parser, new[]{ "Result" }, null, null, null)
           }));
     }
@@ -49,11 +49,11 @@ namespace GrpcServer.Protos {
   /// <summary>
   /// 进队列请求。
   /// </summary>
-  public sealed partial class EntryRequset : pb::IMessage<EntryRequset> {
-    private static readonly pb::MessageParser<EntryRequset> _parser = new pb::MessageParser<EntryRequset>(() => new EntryRequset());
+  public sealed partial class EntryRequest : pb::IMessage<EntryRequest> {
+    private static readonly pb::MessageParser<EntryRequest> _parser = new pb::MessageParser<EntryRequest>(() => new EntryRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<EntryRequset> Parser { get { return _parser; } }
+    public static pb::MessageParser<EntryRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -66,21 +66,21 @@ namespace GrpcServer.Protos {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntryRequset() {
+    public EntryRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntryRequset(EntryRequset other) : this() {
+    public EntryRequest(EntryRequest other) : this() {
       tag_ = other.tag_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntryRequset Clone() {
-      return new EntryRequset(this);
+    public EntryRequest Clone() {
+      return new EntryRequest(this);
     }
 
     /// <summary>Field number for the "tag" field.</summary>
@@ -99,11 +99,11 @@ namespace GrpcServer.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as EntryRequset);
+      return Equals(other as EntryRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EntryRequset other) {
+    public bool Equals(EntryRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -153,7 +153,7 @@ namespace GrpcServer.Protos {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EntryRequset other) {
+    public void MergeFrom(EntryRequest other) {
       if (other == null) {
         return;
       }
@@ -344,11 +344,11 @@ namespace GrpcServer.Protos {
   /// <summary>
   /// 判重请求。
   /// </summary>
-  public sealed partial class DuplicateCheckRequset : pb::IMessage<DuplicateCheckRequset> {
-    private static readonly pb::MessageParser<DuplicateCheckRequset> _parser = new pb::MessageParser<DuplicateCheckRequset>(() => new DuplicateCheckRequset());
+  public sealed partial class DuplicateCheckRequest : pb::IMessage<DuplicateCheckRequest> {
+    private static readonly pb::MessageParser<DuplicateCheckRequest> _parser = new pb::MessageParser<DuplicateCheckRequest>(() => new DuplicateCheckRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DuplicateCheckRequset> Parser { get { return _parser; } }
+    public static pb::MessageParser<DuplicateCheckRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -361,21 +361,21 @@ namespace GrpcServer.Protos {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DuplicateCheckRequset() {
+    public DuplicateCheckRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DuplicateCheckRequset(DuplicateCheckRequset other) : this() {
+    public DuplicateCheckRequest(DuplicateCheckRequest other) : this() {
       tag_ = other.tag_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DuplicateCheckRequset Clone() {
-      return new DuplicateCheckRequset(this);
+    public DuplicateCheckRequest Clone() {
+      return new DuplicateCheckRequest(this);
     }
 
     /// <summary>Field number for the "tag" field.</summary>
@@ -391,11 +391,11 @@ namespace GrpcServer.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as DuplicateCheckRequset);
+      return Equals(other as DuplicateCheckRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DuplicateCheckRequset other) {
+    public bool Equals(DuplicateCheckRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -445,7 +445,7 @@ namespace GrpcServer.Protos {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DuplicateCheckRequset other) {
+    public void MergeFrom(DuplicateCheckRequest other) {
       if (other == null) {
         return;
       }

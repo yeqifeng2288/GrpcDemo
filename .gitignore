@@ -4,3 +4,11 @@
 
 /.vs
 /src/.vs/GrpcDemo/v16
+/src/.vs/GrpcDemo
+/src/GrpcServer/obj
+*.dll
+*.pdb
+/src/Entities/bin/Debug
+/src/GrpcClient/bin/Debug/netcoreapp3.0/runtimes
+/src/GrpcClient/bin/Debug/netcoreapp3.0
+/src/Entities/obj
