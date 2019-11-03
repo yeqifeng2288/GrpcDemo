@@ -61,10 +61,7 @@ namespace GrpcClient
             var randomBuider = new RandomBulider(0, 2000, _randomMax);
             foreach (var tag in randomBuider.Next())
             {
-                var msg = JsonSerializer.Serialize(new WebApiEntryRequest { Tag = tag.ToString() });
-                var hrm = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Duplicate/EntryDuplicate");
-                hrm.Version = new Version(2, 0);
-                hrm.Content = new StringContent(msg, Encoding.UTF8, "application/json");
+                HttpRequestMessage hrm = BuildStringHttpRequestMessage(new WebApiEntryRequest { Tag = tag.ToString() });
                 var response = await client.SendAsync(hrm);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -80,7 +77,6 @@ namespace GrpcClient
             }
         }
 
-
         /// <summary>
         /// WebApi判重。
         /// </summary>
@@ -91,10 +87,7 @@ namespace GrpcClient
             var randomBuider = new RandomBulider(0, 2000, _randomMax);
             foreach (var tag in randomBuider.Next())
             {
-                var msg = JsonSerializer.Serialize(new WebApiDuplicateCheckRequest { Tag = tag.ToString() });
-                var hrm = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Duplicate/DuplicateCheck");
-                hrm.Version = new Version(2, 0);
-                hrm.Content = new StringContent(msg, Encoding.UTF8, "application/json");
+                var hrm = BuildStringHttpRequestMessage(new WebApiDuplicateCheckRequest { Tag = tag.ToString() });
                 var response = await client.SendAsync(hrm);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -108,6 +101,20 @@ namespace GrpcClient
 
                 SpinWait.SpinUntil(() => false, 100);
             }
+        }
+
+        /// <summary>
+        /// 构造http请求方法。
+        /// </summary>
+        /// <param name="entity">需要json化的实体。</param>
+        /// <returns>返回包含json化信息的http请求信息。</returns>
+        private static HttpRequestMessage BuildStringHttpRequestMessage<TValue>(TValue entity)
+        {
+            var msg = JsonSerializer.Serialize(entity);
+            var hrm = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Duplicate/EntryDuplicate");
+            hrm.Version = new Version(2, 0);
+            hrm.Content = new StringContent(msg, Encoding.UTF8, "application/json");
+            return hrm;
         }
         #endregion
 
