@@ -111,9 +111,11 @@ namespace GrpcClient
         private static HttpRequestMessage BuildStringHttpRequestMessage<TValue>(TValue entity)
         {
             var msg = JsonSerializer.Serialize(entity);
-            var hrm = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Duplicate/EntryDuplicate");
-            hrm.Version = new Version(2, 0);
-            hrm.Content = new StringContent(msg, Encoding.UTF8, "application/json");
+            var hrm = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Duplicate/EntryDuplicate")
+            {
+                Version = new Version(2, 0),
+                Content = new StringContent(msg, Encoding.UTF8, "application/json")
+            };
             return hrm;
         }
         #endregion
